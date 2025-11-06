@@ -19,6 +19,7 @@ port=4200 (what i use for local development)
 ### Back :
 
 - [x] - Add dotenv for environment variables
-- [ ] - Add Logging with Morgan
-- [ ] - Add Auth Route
+- [x] - Add body parser
+- [x] - Add Auth Routes
 - [ ] - Add Tests for Auth Route
+- [ ] - Add Logging with Morgan
