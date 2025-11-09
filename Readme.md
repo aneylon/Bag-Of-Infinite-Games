@@ -15,6 +15,10 @@ port=4200 (what i use for local development)
 ### Front :
 
 - [ ] - Add login / logout / sign up components
+- [-] - Add Auth Context
+- [-] - Add Version Context
+- [-] - Add Api uiils file
+  - [ ] - Add Tests for api uitls
 
 ### Back :
 
