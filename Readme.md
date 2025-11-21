@@ -10,10 +10,17 @@ Add a .env file to the backend project with the following variables
 port=4200 (what i use for local development)
 ```
 
+### Recommended VS Code plugins for development
+
+- [ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+
 ## TODOs :
 
 ### Front :
 
+- [x] - Add React Router
 - [ ] - Add login / logout / sign up components
 - [-] - Add Auth Context
 - [-] - Add Version Context
@@ -27,3 +34,8 @@ port=4200 (what i use for local development)
 - [x] - Add Auth Routes
 - [ ] - Add Tests for Auth Route
 - [ ] - Add Logging with Morgan
+
+## Technologies utilized
+
+- [React](https://react.dev/)
+- [React Router](https://reactrouter.com/)
