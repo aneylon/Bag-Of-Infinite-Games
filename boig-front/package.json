@@ -8,7 +8,6 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
-    "json-server": "^1.0.0-beta.3",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-redux": "^9.2.0",
@@ -21,7 +20,8 @@
     "build": "npm run generate-version-file && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "generate-version-file": "node ./tools/generate-version-file.js"
+    "generate-version-file": "node ./tools/generate-version-file.js",
+    "dev-db": "json-server --watch ./tools/db.json --port 8000"
   },
   "eslintConfig": {
     "extends": [
@@ -40,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "json-server": "^1.0.0-beta.3"
   }
 }

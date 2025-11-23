@@ -6,6 +6,7 @@ export const Navbar = () => {
       <h2>Bag of Infinite Games</h2>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/about">About</NavLink>
+      <NavLink to="/news">News</NavLink>
     </nav>
   );
 };
