@@ -1,6 +1,9 @@
 import { NavLink } from "react-router";
 
 export const Navbar = () => {
+  const signOut = () => {
+    console.log("Sign out");
+  };
   return (
     <nav>
       <div className="nav-wrapper">
@@ -16,6 +19,13 @@ export const Navbar = () => {
           </li>
           <li>
             <NavLink to="/news">News</NavLink>
+          </li>
+          <li>
+            <NavLink to="/signin">Sign in</NavLink>
+          </li>
+          <li>
+            {/* <button onClick={signOut}>Sign out</button> */}
+            <a onClick={signOut}>Sign out</a>
           </li>
         </ul>
       </div>
