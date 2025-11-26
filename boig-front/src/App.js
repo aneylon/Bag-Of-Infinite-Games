@@ -6,6 +6,7 @@ import { Home } from "./components/Home/Home";
 import { About } from "./components/About/About";
 import { Navbar } from "./components/Navbar/Navbar";
 import News from "./components/News/News";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           </Routes>
         </AuthContextProvider>
       </VersionContextProvider>
+      <ToastContainer position="top-center" theme="dark" />
     </div>
   );
 }

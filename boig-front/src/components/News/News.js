@@ -1,25 +1,21 @@
-import { useEffect, useState } from "react";
 import NewsList from "./NewsList";
 import CreateNews from "./CreateNews";
+import useFetch, { methods } from "../../hooks/useFetch";
+import Pulse from "../Loading/Pulse";
 
 const News = () => {
-  const [news, setNews] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  useEffect(() => {
-    setIsLoading(true);
-    fetch("http://localhost:8000/news")
-      .then((res) => res.json())
-      .then((data) => {
-        setNews(data);
-        setIsLoading(false);
-      });
-  }, []);
+  const { data, error, isPending } = useFetch(
+    "http://localhost:8000/news",
+    methods.GET
+  );
+
   return (
     <div>
       <h1>News</h1>
       <CreateNews />
-      {isLoading && <div>...loading...</div>}
-      {news.length > 0 && <NewsList news={news} />}
+      {isPending && <Pulse />}
+      {data && <NewsList news={data} />}
+      {error && <div>An error occured : {error}</div>}
     </div>
   );
 };
