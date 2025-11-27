@@ -1,12 +1,16 @@
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 
 const app = express();
-const port = 4200;
+const port = process.env.port;
+const mongo_uri = process.env.mongo_uri;
+
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 
 const auth = require("./Routes/Auth");
+const { default: mongoose } = require("mongoose");
 
 app.use("/auth", auth);
 
@@ -30,6 +34,11 @@ app.delete("/", (req, res) => {
   res.send("BoIG DELETE");
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+mongoose
+  .connect(mongo_uri)
+  .then(() => {
+    app.listen(port, () => {
+      console.log(`Example app listening on port ${port}`);
+    });
+  })
+  .catch((error) => console.error(error));

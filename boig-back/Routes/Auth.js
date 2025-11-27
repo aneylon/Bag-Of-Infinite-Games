@@ -5,10 +5,10 @@ router.get("/", (req, res) => {
   res.send("auth!!!");
 });
 
-router.post("/login", (req, res) => {
+router.post("/signin", (req, res) => {
   const { password, username } = req.body;
   console.log({ password, username });
-  res.send(`login ${password} ${username}`);
+  res.send(`signin ${password} ${username}`);
 });
 
 router.post("/signup", (req, res) => {
