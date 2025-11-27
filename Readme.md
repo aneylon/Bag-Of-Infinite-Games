@@ -6,8 +6,11 @@ A resource for Javascript based games.
 
 Add a .env file to the backend project with the following variables
 
+This is what I use for local development.
+
 ```
-port=4200 (what i use for local development)
+port=4200
+mongo_uri=mongodb://localhost:27017
 ```
 
 ### Recommended VS Code plugins for development
@@ -31,9 +34,11 @@ port=4200 (what i use for local development)
 
 - [x] - Add dotenv for environment variables
 - [x] - Add body parser
+  - [ ] - Determine if body parser is necessary
 - [x] - Add Auth Routes
 - [ ] - Add Tests for Auth Route
 - [ ] - Add Logging with Morgan
+- [x] - Add mongo connection
 
 ## Technologies utilized
 
