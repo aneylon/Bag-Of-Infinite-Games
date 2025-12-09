@@ -13,6 +13,7 @@ const AuthContextProvider = (props) => {
 
   useEffect(() => {
     // TODO : get any stored auth info
+    console.log("get stored auth info on start up");
   }, []);
 
   return (

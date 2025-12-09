@@ -3,20 +3,26 @@ import { createContext, useEffect, useState } from "react";
 export const VersionContext = createContext();
 
 const VersionContextProvider = (props) => {
-  const [version, setVersion] = useState(0);
+  const [version, setVersion] = useState(null);
 
   const getVersion = () => {
-    // todo :
-    // call to get version
-    // set version
+    fetch("./version.json")
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
+      .then((ver) => {
+        setVersion(ver.version);
+      });
   };
 
   useEffect(() => {
-    // TODO : get the current version
+    getVersion();
   }, []);
 
   return (
-    <VersionContext.Provider value={{ version }}>
+    <VersionContext.Provider value={version}>
       {props.children}
     </VersionContext.Provider>
   );
