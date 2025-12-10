@@ -15,7 +15,7 @@ const Signin = () => {
     setEmail("");
     setPassword("");
     let userName = "whatever man";
-    setAuth({ userName, email });
+    setAuth({ userName, email, authToken: "justTesting" });
   };
   return (
     <div>

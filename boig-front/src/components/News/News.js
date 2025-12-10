@@ -5,7 +5,7 @@ import Pulse from "../Loading/Pulse";
 
 const News = () => {
   const { data, error, isPending } = useFetch(
-    "http://localhost:8000/news",
+    "http://localhost:4200/news",
     methods.GET
   );
 

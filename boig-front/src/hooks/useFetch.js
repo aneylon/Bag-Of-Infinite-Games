@@ -1,16 +1,26 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../contexts/authContext";
 // TODO : Define base url in env settings
+// const baseUrl = process.env.baseUrl
 
 const useFetch = (url, method, body) => {
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
+  const { user } = useContext(AuthContext);
+  let headers = {
+    "Content-Type": "application/json",
+  };
+  if (user) {
+    headers = { ...headers, Authorization: `Bearer ${user.authToken}` };
+  }
 
   useEffect(() => {
     setIsPending(true);
     fetch(url, {
       method,
       body: JSON.stringify(body),
+      headers: headers,
     })
       .then((res) => {
         if (res.ok) {
