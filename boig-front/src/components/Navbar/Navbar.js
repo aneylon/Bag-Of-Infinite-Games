@@ -1,9 +1,15 @@
+import { useContext } from "react";
 import { NavLink } from "react-router";
+import { AuthContext } from "../../contexts/authContext";
 
 export const Navbar = () => {
+  const { user, clearAuth } = useContext(AuthContext);
+
   const signOut = () => {
     console.log("Sign out");
+    clearAuth();
   };
+
   return (
     <nav>
       <div className="nav-wrapper">
@@ -20,13 +26,17 @@ export const Navbar = () => {
           <li>
             <NavLink to="/news">News</NavLink>
           </li>
-          <li>
-            <NavLink to="/signin">Sign in</NavLink>
-          </li>
-          <li>
-            {/* <button onClick={signOut}>Sign out</button> */}
-            <a onClick={signOut}>Sign out</a>
-          </li>
+          {!user && (
+            <li>
+              <NavLink to="/signin">Sign in</NavLink>
+            </li>
+          )}
+          {user && (
+            <li>
+              <button onClick={signOut}>Sign out</button>
+              {/* <a onClick={signOut}>Sign out</a> */}
+            </li>
+          )}
         </ul>
       </div>
     </nav>

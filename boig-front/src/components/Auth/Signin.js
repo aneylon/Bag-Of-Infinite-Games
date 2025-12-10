@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router";
 import Pulse from "../Loading/Pulse";
+import { AuthContext } from "../../contexts/authContext";
 
 const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { setAuth } = useContext(AuthContext);
 
   const signIn = (e) => {
     e.preventDefault();
@@ -12,6 +14,8 @@ const Signin = () => {
     // TODO :
     setEmail("");
     setPassword("");
+    let userName = "whatever man";
+    setAuth({ userName, email });
   };
   return (
     <div>
