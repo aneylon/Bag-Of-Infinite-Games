@@ -18,16 +18,17 @@ mongo_uri=mongodb://localhost:27017
 - [ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 - [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+- [Postman](https://www.postman.com/)
 
 ## TODOs :
 
 ### Front :
 
 - [x] - Add React Router
-- [ ] - Add login / logout / sign up components
-- [-] - Add Auth Context
-- [-] - Add Version Context
-- [-] - Add Api uiils file
+- [x] - Add login / logout / sign up components
+- [x] - Add Auth Context
+- [x] - Add Version Context
+- [-] - Add Api utils file
   - [ ] - Add Tests for api uitls
 
 ### Back :
