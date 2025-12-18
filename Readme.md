@@ -19,6 +19,7 @@ mongo_uri=mongodb://localhost:27017
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 - [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 - [Postman](https://www.postman.com/)
+- [Cypress](https://www.cypress.io/)
 
 ## TODOs :
 
@@ -30,6 +31,7 @@ mongo_uri=mongodb://localhost:27017
 - [x] - Add Version Context
 - [-] - Add Api utils file
   - [ ] - Add Tests for api uitls
+- [] - Add Cypress for Front end / End to end testing
 
 ### Back :
 
