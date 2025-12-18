@@ -33,6 +33,14 @@ mongo_uri=mongodb://localhost:27017
   - [ ] - Add Tests for api uitls
 - [] - Add Cypress for Front end / End to end testing
 
+### TODO :
+
+- [] - TODOs
+- [] - Notes
+- [] - Tasks
+- [] - Message board
+- [ ] - Direct message
+
 ### Back :
 
 - [x] - Add dotenv for environment variables
