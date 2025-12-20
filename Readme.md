@@ -35,11 +35,13 @@ mongo_uri=mongodb://localhost:27017
 
 ### TODO :
 
+- [x] - News
 - [] - TODOs
 - [] - Notes
 - [] - Tasks
 - [] - Message board
 - [ ] - Direct message
+- [ ] - Random functions
 
 ### Back :
 
