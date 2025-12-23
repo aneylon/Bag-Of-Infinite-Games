@@ -23,6 +23,8 @@ mongo_uri=mongodb://localhost:27017
 
 ## TODOs :
 
+- [ ] - Use JSDoc to document
+
 ### Front :
 
 - [x] - Add React Router
