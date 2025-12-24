@@ -7,7 +7,6 @@ test("Random number", () => {
   // to be greater than 0
   // to be less than the max value
   //   expect(random(5)).toHaveValue();
-  console.log(random(4));
-  console.assert(random(4) > 0);
-  console.assert(random(3) < 4);
+  expect(random(5)).toBeGreaterThan(0);
+  expect(random(5)).toBeLessThan(6);
 });

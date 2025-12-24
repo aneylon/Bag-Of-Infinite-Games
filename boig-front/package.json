@@ -21,6 +21,7 @@
     "start": "react-scripts start",
     "build": "npm run generate-version-file && react-scripts build",
     "test": "react-scripts test",
+    "jest": "jest",
     "eject": "react-scripts eject",
     "generate-version-file": "node ./tools/generate-version-file.js",
     "dev-db": "json-server --watch ./tools/db.json --port 8000"
@@ -44,6 +45,8 @@
     ]
   },
   "devDependencies": {
+    "@jest/globals": "^30.2.0",
+    "jest": "^27.5.1",
     "json-server": "^1.0.0-beta.3"
   }
 }
