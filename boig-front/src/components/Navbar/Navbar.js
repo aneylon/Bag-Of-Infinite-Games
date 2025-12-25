@@ -26,6 +26,9 @@ export const Navbar = () => {
           <li>
             <NavLink to="/news">News</NavLink>
           </li>
+          <li>
+            <NavLink to="/Todo">Todo</NavLink>
+          </li>
           {!user && (
             <li>
               <NavLink to="/signin">Sign in</NavLink>
