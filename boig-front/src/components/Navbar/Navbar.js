@@ -27,7 +27,10 @@ export const Navbar = () => {
             <NavLink to="/news">News</NavLink>
           </li>
           <li>
-            <NavLink to="/Todo">Todo</NavLink>
+            <NavLink to="/todo">Todo</NavLink>
+          </li>
+          <li>
+            <NavLink to="/notes">Notes</NavLink>
           </li>
           {!user && (
             <li>

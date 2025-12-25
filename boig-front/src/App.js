@@ -12,6 +12,7 @@ import { ToastContainer } from "react-toastify";
 import Signin from "./components/Auth/Signin";
 import Signup from "./components/Auth/Signup";
 import { Version } from "./components/Version/Version";
+import Notes from "./components/Notes/Notes";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/signin" element={<Signin />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/todo" element={<Todo />} />
+            <Route path="/notes" element={<Notes />} />
           </Routes>
           <Version />
         </AuthContextProvider>
