@@ -31,19 +31,20 @@ mongo_uri=mongodb://localhost:27017
 - [x] - Add login / logout / sign up components
 - [x] - Add Auth Context
 - [x] - Add Version Context
-- [-] - Add Api utils file
+- [ ] - Add Api utils file
   - [ ] - Add Tests for api uitls
-- [] - Add Cypress for Front end / End to end testing
+- [ ] - Add Cypress for Front end / End to end testing
 
 ### TODO :
 
 - [x] - News
-- [] - TODOs
-- [] - Notes
-- [] - Tasks
-- [] - Message board
+- [ ] - TODOs
+- [ ] - Notes
+- [ ] - Tasks
+- [ ] - Message board
 - [ ] - Direct message
 - [ ] - Random functions
+- [ ] - user management
 
 ### Back :
 
