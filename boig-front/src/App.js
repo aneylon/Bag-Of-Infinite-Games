@@ -13,6 +13,7 @@ import Signin from "./components/Auth/Signin";
 import Signup from "./components/Auth/Signup";
 import { Version } from "./components/Version/Version";
 import Notes from "./components/Notes/Notes";
+import MessageBoard from "./components/MessageBoard/MessageBoard";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/todo" element={<Todo />} />
             <Route path="/notes" element={<Notes />} />
+            <Route path="/messageBoard" element={<MessageBoard />} />
           </Routes>
           <Version />
         </AuthContextProvider>

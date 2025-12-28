@@ -32,6 +32,9 @@ export const Navbar = () => {
           <li>
             <NavLink to="/notes">Notes</NavLink>
           </li>
+          <li>
+            <NavLink to="/messageBoard">Message Board</NavLink>
+          </li>
           {!user && (
             <li>
               <NavLink to="/signin">Sign in</NavLink>
