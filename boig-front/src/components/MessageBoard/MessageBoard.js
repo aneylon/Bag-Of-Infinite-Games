@@ -1,4 +1,5 @@
 import MessageBoardMessage from "./MessageBoardMessage";
+import NewMessageBoardMessage from "./NewMessageBoardMessage";
 
 const MessageBoard = () => {
   const message = {
@@ -12,6 +13,7 @@ const MessageBoard = () => {
   return (
     <div>
       <h1>Message Board</h1>
+      <NewMessageBoardMessage parentId={234} />
       <MessageBoardMessage message={message} />
     </div>
   );
