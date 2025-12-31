@@ -1,3 +1,4 @@
+import MessageBoardListItem from "./MessageBoardListItem";
 import MessageBoardMessage from "./MessageBoardMessage";
 import NewMessageBoardMessage from "./NewMessageBoardMessage";
 
@@ -15,6 +16,7 @@ const MessageBoard = () => {
       <h1>Message Board</h1>
       <NewMessageBoardMessage parentId={234} />
       <MessageBoardMessage message={message} />
+      <MessageBoardListItem message={message} />
     </div>
   );
 };
