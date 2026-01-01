@@ -14,6 +14,7 @@ import Signup from "./components/Auth/Signup";
 import { Version } from "./components/Version/Version";
 import Notes from "./components/Notes/Notes";
 import MessageBoard from "./components/MessageBoard/MessageBoard";
+import GameList from "./components/GameList/GameList";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="/todo" element={<Todo />} />
             <Route path="/notes" element={<Notes />} />
             <Route path="/messageBoard" element={<MessageBoard />} />
+            <Route path="/gamelist" element={<GameList />} />
           </Routes>
           <Version />
         </AuthContextProvider>
