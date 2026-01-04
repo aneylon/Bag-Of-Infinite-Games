@@ -5,5 +5,9 @@
  */
 
 export const random = (max) => {
-  return Math.floor(Math.random() * max);
+  return Math.floor(Math.random() * max) + 1;
+};
+
+export const randomBetween = (min, max) => {
+  return Math.floor(Math.random() * (max - min)) + min + 1;
 };
