@@ -20,6 +20,7 @@ mongo_uri=mongodb://localhost:27017
 - [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 - [Postman](https://www.postman.com/)
 - [Cypress](https://www.cypress.io/)
+- [JS Doc](https://jsdoc.app/)
 
 ## TODOs :
 
@@ -60,3 +61,25 @@ mongo_uri=mongodb://localhost:27017
 
 - [React](https://react.dev/)
 - [React Router](https://reactrouter.com/)
+
+### JS DOC info
+
+use comment for type checking in a single file
+
+```
+// @ts-check
+```
+
+turn on type checking in VS Code settings
+
+```settings.json
+  "js/ts.implicitProjectConfig.checkJs": true
+```
+
+Use documentation for methods and types
+
+```
+/**
+* Example goes here
+*/
+```
