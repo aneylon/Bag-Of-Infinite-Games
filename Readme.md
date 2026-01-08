@@ -81,5 +81,6 @@ Use documentation for methods and types
 ```
 /**
 * Example goes here
+
 */
 ```
