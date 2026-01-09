@@ -34,7 +34,7 @@ mongo_uri=mongodb://localhost:27017
 - [x] - Add Version Context
 - [ ] - Add Api utils file
   - [ ] - Add Tests for api uitls
-- [ ] - Add Cypress for Front end / End to end testing
+- [x] - Add Cypress for Front end / End to end testing
 
 ### TODO :
 
@@ -61,6 +61,16 @@ mongo_uri=mongodb://localhost:27017
 
 - [React](https://react.dev/)
 - [React Router](https://reactrouter.com/)
+
+### Cypress
+
+-[Cypress](https://cypress.io)
+
+To run Cypress
+
+```
+npx cypress open
+```
 
 ### JS DOC info
 
