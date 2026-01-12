@@ -15,6 +15,7 @@ import { Version } from "./components/Version/Version";
 import Notes from "./components/Notes/Notes";
 import MessageBoard from "./components/MessageBoard/MessageBoard";
 import GameList from "./components/GameList/GameList";
+import Modal from "./components/Modal/Modal";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         </AuthContextProvider>
       </VersionContextProvider>
       <ToastContainer position="top-center" theme="dark" />
+      <Modal />
     </div>
   );
 }
