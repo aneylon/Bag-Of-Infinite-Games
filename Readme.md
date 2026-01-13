@@ -53,9 +53,18 @@ mongo_uri=mongodb://localhost:27017
 - [x] - Add body parser
   - [ ] - Determine if body parser is necessary
 - [x] - Add Auth Routes
+    - [ ] - Complete auth routes
 - [ ] - Add Tests for Auth Route
 - [ ] - Add Logging with Morgan
 - [x] - Add mongo connection
+- [ ] - Add missing routes
+  - [ ] - Add bug route
+  - [ ] - Add contact route
+  - [ ] - Add message routes
+  - [ ] - Add news routes
+  - [ ] - Add Notes routes
+  - [ ] - Add Todo routes
+  - [ ] -
 
 ## Technologies utilized
 
