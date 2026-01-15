@@ -3,7 +3,7 @@ import Bugs from "../Bugs/SubmitNewBug";
 export const About = () => {
   return (
     <div>
-      <h1>About</h1>
+      <h1 data-test="about-header">About</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam,
         sit!
