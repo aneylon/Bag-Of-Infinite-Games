@@ -16,12 +16,14 @@ app.use(bodyParser.json());
 const auth = require("./Routes/Auth");
 const contact = require("./Routes/Contact");
 const bugs = require("./Routes/Bugs");
+const todo = require("./Routes/Todo");
 
 const { default: mongoose } = require("mongoose");
 
 app.use("/auth", auth);
 app.use("/contact", contact);
 app.use("/bugs", bugs);
+app.use("/todo", todo);
 
 app.get("/", (req, res) => {
   res.send("BoIG GET");
