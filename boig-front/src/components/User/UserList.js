@@ -1,11 +1,11 @@
+import UserListItem from "./UserListItem";
+
 const UserList = ({ users }) => {
   return (
     <div className="userlist">
       <ul>
         {users.map((user) => (
-          <li user={user} key={user.id}>
-            {user.name}
-          </li>
+          <UserListItem user={user} key={user.id} />
         ))}
       </ul>
     </div>
