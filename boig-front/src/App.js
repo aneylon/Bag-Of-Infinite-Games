@@ -16,6 +16,7 @@ import Notes from "./components/Notes/Notes";
 import MessageBoard from "./components/MessageBoard/MessageBoard";
 import GameList from "./components/GameList/GameList";
 import Modal from "./components/Modal/Modal";
+import HonorAndGlory from "./components/HonorAndGlory/HonorAndGlory";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/notes" element={<Notes />} />
             <Route path="/messageBoard" element={<MessageBoard />} />
             <Route path="/gamelist" element={<GameList />} />
+            <Route path="/honorAndGlory" element={<HonorAndGlory />} />
           </Routes>
           <Version />
         </AuthContextProvider>
