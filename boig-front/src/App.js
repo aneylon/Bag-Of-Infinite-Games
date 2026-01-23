@@ -17,6 +17,7 @@ import MessageBoard from "./components/MessageBoard/MessageBoard";
 import GameList from "./components/GameList/GameList";
 import Modal from "./components/Modal/Modal";
 import HonorAndGlory from "./components/HonorAndGlory/HonorAndGlory";
+import RandomIdeaGenerator from "./components/RandomIdeaGenerator/RandomIdeaGenerator";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="/messageBoard" element={<MessageBoard />} />
             <Route path="/gamelist" element={<GameList />} />
             <Route path="/honorAndGlory" element={<HonorAndGlory />} />
+            <Route path="/randomIdea" element={<RandomIdeaGenerator />} />
           </Routes>
           <Version />
         </AuthContextProvider>
