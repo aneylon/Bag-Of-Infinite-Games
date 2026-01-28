@@ -13,8 +13,19 @@ const RandomIdeaGenerator = () => {
     "frog",
     "bee",
   ];
-  const verb = [];
-  const material = [];
+  const verb = [
+    "run",
+    "walk",
+    "jump",
+    "swim",
+    "fly",
+    "build",
+    "cook",
+    "enchant",
+    "dig",
+    "mine",
+  ];
+  const material = ["wood", "dirt", "stone", "gravel", "wool"];
 
   const [ideas, setIdeas] = useState([]);
   const [numberOfIdeas, setNumberOfIdeas] = useState(1);
@@ -22,8 +33,11 @@ const RandomIdeaGenerator = () => {
     const newIdeas = [];
     for (var i = 0; i < numberOfIdeas; i++) {
       const number = random(mcAnimals.length);
+
       const newThing = mcAnimals[number];
-      newIdeas.push(newThing);
+      const newVerb = verb[random(verb.length)];
+      const newMaterial = material[random(material.length)];
+      newIdeas.push([newThing, newVerb, newMaterial]);
     }
     setIdeas(newIdeas);
   };
@@ -44,7 +58,7 @@ const RandomIdeaGenerator = () => {
       </div>
       <ul>
         {ideas.map((idea, index) => (
-          <li key={index}>{idea}</li>
+          <li key={index}>{idea.join(",")}</li>
         ))}
       </ul>
     </div>
