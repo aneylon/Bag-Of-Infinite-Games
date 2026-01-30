@@ -25,9 +25,41 @@ const RandomIdeaGenerator = () => {
     "dig",
     "mine",
   ];
-  const material = ["wood", "dirt", "stone", "gravel", "wool"];
-
+  const material = [
+    "wood",
+    "dirt",
+    "stone",
+    "gravel",
+    "wool",
+    "sand",
+    "chiseled",
+    "grass",
+    "coal",
+    "steel",
+    "gold",
+    "copper",
+    "diamond",
+    "redstone",
+    "lapis",
+    "emerald",
+    "mushroom",
+  ];
+  const location = [
+    "plains",
+    "forest",
+    "mountains",
+    "desert",
+    "beach",
+    "ocean",
+    "river",
+    "swamp",
+    "savannah",
+    "badlands",
+    "jungle",
+    "cave",
+  ];
   const [nounSelected, setNounSelected] = useState(true);
+  const [locationSelected, setLocationSelected] = useState(false);
   const [materialSelected, setMaterialSelected] = useState(false);
   const [verbSelected, setVerbSelected] = useState(false);
   const [error, setError] = useState(false);
@@ -43,9 +75,12 @@ const RandomIdeaGenerator = () => {
       const newMaterial = materialSelected
         ? material[random(material.length)]
         : "";
+      const newLocation = locationSelected
+        ? location[random(location.length)]
+        : null;
 
       // TODO : figure out a way to exclude empty strings...
-      newIdeas.push([newThing, newVerb, newMaterial]);
+      newIdeas.push([newThing, newVerb, newMaterial, newLocation]);
     }
     setIdeas(newIdeas);
   };
@@ -54,13 +89,14 @@ const RandomIdeaGenerator = () => {
     if (
       verbSelected === false &&
       nounSelected === false &&
-      materialSelected === false
+      materialSelected === false &&
+      locationSelected === false
     ) {
       setError(true);
     } else {
       setError(false);
     }
-  }, [verbSelected, nounSelected, materialSelected]);
+  }, [verbSelected, nounSelected, materialSelected, locationSelected]);
 
   return (
     <div>
@@ -83,14 +119,23 @@ const RandomIdeaGenerator = () => {
             checked={verbSelected}
             onChange={() => setVerbSelected(!verbSelected)}
           />
-          <label htmlFor="material">Material : </label>
 
+          <label htmlFor="material">Material : </label>
           <input
             type="checkbox"
             name="material"
             id="material"
             checked={materialSelected}
             onChange={() => setMaterialSelected(!materialSelected)}
+          />
+
+          <label htmlFor="location">Location : </label>
+          <input
+            type="checkbox"
+            name="location"
+            id="location"
+            checked={locationSelected}
+            onChange={() => setLocationSelected(!locationSelected)}
           />
         </div>
         <div>
