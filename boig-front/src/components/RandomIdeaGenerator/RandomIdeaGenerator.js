@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { random, randomBetween } from "../../services/random/random";
+import Pulse from "../Loading/Pulse";
 
 const RandomIdeaGenerator = () => {
   const mcAnimals = [
@@ -58,6 +59,7 @@ const RandomIdeaGenerator = () => {
     "jungle",
     "cave",
   ];
+  const [dataIsLoading, setDataIsLoading] = useState(true);
   const [nounSelected, setNounSelected] = useState(true);
   const [locationSelected, setLocationSelected] = useState(false);
   const [materialSelected, setMaterialSelected] = useState(false);
@@ -86,6 +88,15 @@ const RandomIdeaGenerator = () => {
   };
 
   useEffect(() => {
+    console.log("get data");
+    // todo get data from api backend
+    setTimeout(() => {
+      // set loading false
+      setDataIsLoading(false);
+    }, 1000);
+  }, []);
+
+  useEffect(() => {
     if (
       verbSelected === false &&
       nounSelected === false &&
@@ -103,40 +114,45 @@ const RandomIdeaGenerator = () => {
       <h1>Random Idea Generator</h1>
       <div>
         <div>
-          <label htmlFor="noun">Noun : </label>
-          <input
-            type="checkbox"
-            name="noun"
-            id="noun"
-            checked={nounSelected}
-            onChange={() => setNounSelected(!nounSelected)}
-          />
-          <label htmlFor="verb">Verb : </label>
-          <input
-            type="checkbox"
-            name="verb"
-            id="verb"
-            checked={verbSelected}
-            onChange={() => setVerbSelected(!verbSelected)}
-          />
+          {dataIsLoading && <Pulse />}
+          {!dataIsLoading && (
+            <>
+              <label htmlFor="noun">Noun : </label>
+              <input
+                type="checkbox"
+                name="noun"
+                id="noun"
+                checked={nounSelected}
+                onChange={() => setNounSelected(!nounSelected)}
+              />
+              <label htmlFor="verb">Verb : </label>
+              <input
+                type="checkbox"
+                name="verb"
+                id="verb"
+                checked={verbSelected}
+                onChange={() => setVerbSelected(!verbSelected)}
+              />
 
-          <label htmlFor="material">Material : </label>
-          <input
-            type="checkbox"
-            name="material"
-            id="material"
-            checked={materialSelected}
-            onChange={() => setMaterialSelected(!materialSelected)}
-          />
+              <label htmlFor="material">Material : </label>
+              <input
+                type="checkbox"
+                name="material"
+                id="material"
+                checked={materialSelected}
+                onChange={() => setMaterialSelected(!materialSelected)}
+              />
 
-          <label htmlFor="location">Location : </label>
-          <input
-            type="checkbox"
-            name="location"
-            id="location"
-            checked={locationSelected}
-            onChange={() => setLocationSelected(!locationSelected)}
-          />
+              <label htmlFor="location">Location : </label>
+              <input
+                type="checkbox"
+                name="location"
+                id="location"
+                checked={locationSelected}
+                onChange={() => setLocationSelected(!locationSelected)}
+              />
+            </>
+          )}
         </div>
         <div>
           <input
@@ -144,11 +160,12 @@ const RandomIdeaGenerator = () => {
             name="numberOfIdeas"
             id="numberOfIdeas"
             placeholder="Number of ideas"
+            disabled={error || dataIsLoading}
             onChange={(e) => setNumberOfIdeas(+e.target.value)}
             value={numberOfIdeas}
           />
 
-          <button onClick={newIdea} disabled={error}>
+          <button onClick={newIdea} disabled={error || dataIsLoading}>
             Do it!
           </button>
         </div>
