@@ -46,6 +46,11 @@ mongo_uri=mongodb://localhost:27017
 - [ ] - Direct message
 - [ ] - Random functions
 - [ ] - user management
+- [ ] - Games
+  - [ ] - Math
+  - [ ] - Match
+  - [ ] - Tic Tac Toe
+  - [ ] - More?
 
 ### Back :
 
