@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-const Modal = () => {
-  const [isVisible, setIsVisible] = useState("block"); // 'none' to hide, 'block' to show
+const Modal = ({ content, show = true }) => {
+  const [isVisible, setIsVisible] = useState(show ? "block" : "none"); // 'none' to hide, 'block' to show
   const toggleModel = () => {
     if (isVisible === "none") {
       setIsVisible("block");
@@ -34,7 +34,7 @@ const Modal = () => {
           border: "3px solid black",
         }}
       >
-        <h1>Modal</h1>
+        {content}
       </div>
     </div>
   );

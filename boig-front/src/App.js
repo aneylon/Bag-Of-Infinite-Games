@@ -43,7 +43,14 @@ function App() {
         </AuthContextProvider>
       </VersionContextProvider>
       <ToastContainer position="top-center" theme="dark" />
-      <Modal />
+      <Modal
+        content={
+          <h1>
+            The version of the app running in your browser is out of date.
+            Please refresh your browser to continue.
+          </h1>
+        }
+      />
     </div>
   );
 }
