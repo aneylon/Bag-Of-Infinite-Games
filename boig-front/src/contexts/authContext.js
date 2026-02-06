@@ -19,7 +19,7 @@ const AuthContextProvider = (props) => {
   const getAuth = () => {
     let userFromStorage = localStorage.getItem("user");
     if (userFromStorage) {
-      dispatch({ type: "LOGIN", payload: user });
+      dispatch({ type: "LOGIN", payload: userFromStorage });
     }
   };
 
