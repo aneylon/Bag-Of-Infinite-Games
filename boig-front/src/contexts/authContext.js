@@ -1,34 +1,34 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
 
 export const AuthContext = createContext();
 
+export const authReducer = (state, action) => {
+  switch (action.type) {
+    case "LOGIN":
+      return { user: action.payload };
+    case "LOGOUT":
+      return { user: null };
+    default:
+      return state;
+  }
+};
+
 const AuthContextProvider = (props) => {
-  const [user, setUser] = useState(null);
-  const storageString = "boig-user";
+  const [state, dispatch] = useReducer(authReducer, { user: null });
 
   const getAuth = () => {
-    let userFromStorage = localStorage.getItem(storageString);
-    setUser(JSON.parse(userFromStorage));
-  };
-
-  const setAuth = (user) => {
-    localStorage.setItem(storageString, JSON.stringify(user));
-    setUser(user);
-  };
-
-  const clearAuth = () => {
-    setUser(null);
-    localStorage.clear(storageString);
+    let userFromStorage = localStorage.getItem("user");
+    if (userFromStorage) {
+      dispatch({ type: "LOGIN", payload: user });
+    }
   };
 
   useEffect(() => {
-    // TODO : get any stored auth info
-    console.log("get stored auth info on start up");
     getAuth();
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, getAuth, setAuth, clearAuth }}>
+    <AuthContext.Provider value={{ ...state, dispatch }}>
       {props.children}
     </AuthContext.Provider>
   );

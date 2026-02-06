@@ -50,6 +50,7 @@ function App() {
             Please refresh your browser to continue.
           </h1>
         }
+        show={false}
       />
     </div>
   );
