@@ -30,6 +30,7 @@ mongo_uri=mongodb://localhost:27017
 
 - [x] - Add React Router
 - [x] - Add login / logout / sign up components
+  - [ ] - Show errors
 - [x] - Add Auth Context
 - [x] - Add Version Context
 - [ ] - Add Api utils file

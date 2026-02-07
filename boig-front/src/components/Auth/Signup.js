@@ -1,21 +1,22 @@
 import { useState } from "react";
 import { NavLink } from "react-router";
 import Pulse from "../Loading/Pulse";
+import { useSignup } from "../../hooks/useSignup";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const signUp = (e) => {
+  const { signup, isLoading, error } = useSignup();
+  const signUp = async (e) => {
     e.preventDefault();
     console.log("sign up", email, password);
-    // TODO :
-    setEmail("");
-    setPassword("");
+    await signup(email, password);
+    // TODO : navigate away from signup after success
   };
   return (
     <div>
       <h1>Sign Up</h1>
-      <Pulse />
+      {isLoading && <Pulse />}
       <form onSubmit={signUp}>
         <input
           type="email"
@@ -24,6 +25,7 @@ const Signup = () => {
           placeholder="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          disabled={isLoading}
         />
         <input
           type="password"
@@ -32,8 +34,9 @@ const Signup = () => {
           placeholder="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          disabled={isLoading}
         />
-        <input type="submit" value="sign up" />
+        <input type="submit" value="sign up" disabled={isLoading} />
       </form>
       have an account? : <NavLink to="/signin">sign in</NavLink>
     </div>

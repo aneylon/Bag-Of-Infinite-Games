@@ -1,13 +1,15 @@
 import { useContext } from "react";
 import { NavLink } from "react-router";
-import { AuthContext } from "../../contexts/authContext";
+import { useAuthContext } from "../../hooks/useAuthContext";
+import { useLogout } from "../../hooks/useLogout";
 
 export const Navbar = () => {
-  const { user, clearAuth } = useContext(AuthContext);
+  const { user } = useAuthContext();
+  const { logout } = useLogout();
 
   const signOut = () => {
     console.log("Sign out");
-    clearAuth();
+    logout();
   };
 
   return (

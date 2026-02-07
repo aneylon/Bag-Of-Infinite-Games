@@ -1,7 +1,6 @@
 import "./App.css";
 import VersionContextProvider from "./contexts/versionContext";
-import AuthContextProvider from "./contexts/authContext";
-import { Routes, Route } from "react-router";
+import { Routes, Route, Navigate } from "react-router";
 import { Home } from "./components/Home/Home";
 import { About } from "./components/About/About";
 import { Navbar } from "./components/Navbar/Navbar";
@@ -18,29 +17,35 @@ import GameList from "./components/GameList/GameList";
 import Modal from "./components/Modal/Modal";
 import HonorAndGlory from "./components/HonorAndGlory/HonorAndGlory";
 import RandomIdeaGenerator from "./components/RandomIdeaGenerator/RandomIdeaGenerator";
+import { useAuthContext } from "./hooks/useAuthContext";
 
 function App() {
+  const { user } = useAuthContext();
   return (
     <div className="App">
       <VersionContextProvider>
-        <AuthContextProvider>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/news" element={<News />} />
-            <Route path="/matching" element={<Matching />} />
-            <Route path="/signin" element={<Signin />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/todo" element={<Todo />} />
-            <Route path="/notes" element={<Notes />} />
-            <Route path="/messageBoard" element={<MessageBoard />} />
-            <Route path="/gamelist" element={<GameList />} />
-            <Route path="/honorAndGlory" element={<HonorAndGlory />} />
-            <Route path="/randomIdea" element={<RandomIdeaGenerator />} />
-          </Routes>
-          <Version />
-        </AuthContextProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/matching" element={<Matching />} />
+          <Route
+            path="/signin"
+            element={!user ? <Signin /> : <Navigate to="/" />}
+          />
+          <Route
+            path="/signup"
+            element={!user ? <Signup /> : <Navigate to="/" />}
+          />
+          <Route path="/todo" element={<Todo />} />
+          <Route path="/notes" element={<Notes />} />
+          <Route path="/messageBoard" element={<MessageBoard />} />
+          <Route path="/gamelist" element={<GameList />} />
+          <Route path="/honorAndGlory" element={<HonorAndGlory />} />
+          <Route path="/randomIdea" element={<RandomIdeaGenerator />} />
+        </Routes>
+        <Version />
       </VersionContextProvider>
       <ToastContainer position="top-center" theme="dark" />
       <Modal

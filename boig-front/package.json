@@ -1,5 +1,6 @@
 {
   "name": "boig-front",
+  "proxy": "http://localhost:4200",
   "version": "0.0.02a",
   "private": true,
   "dependencies": {

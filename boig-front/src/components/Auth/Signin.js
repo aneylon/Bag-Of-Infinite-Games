@@ -1,26 +1,23 @@
 import { useContext, useState } from "react";
 import { NavLink } from "react-router";
 import Pulse from "../Loading/Pulse";
-import { AuthContext } from "../../contexts/authContext";
+import { useLogin } from "../../hooks/useLogin";
 
 const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { setAuth } = useContext(AuthContext);
+  const { login, isLoading, error } = useLogin();
 
-  const signIn = (e) => {
+  const signIn = async (e) => {
     e.preventDefault();
     console.log("sign in", email, password);
-    // TODO :
-    setEmail("");
-    setPassword("");
-    let userName = "whatever man";
-    setAuth({ userName, email, authToken: "justTesting" });
+    await login(email, password);
+    // TODO : navigate away from login after success.
   };
   return (
     <div>
       <h1>Sign In</h1>
-      <Pulse />
+      {isLoading && <Pulse />}
       <form onSubmit={signIn}>
         <input
           type="email"
@@ -29,6 +26,7 @@ const Signin = () => {
           placeholder="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          disabled={isLoading}
         />
         <input
           type="password"
@@ -37,8 +35,9 @@ const Signin = () => {
           placeholder="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          disabled={isLoading}
         />
-        <input type="submit" value="sign in" />
+        <input type="submit" value="sign in" disabled={isLoading} />
       </form>
       no account? : <NavLink to="/signup">sign up</NavLink>
     </div>
