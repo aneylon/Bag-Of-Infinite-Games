@@ -3,6 +3,8 @@ import { AuthContext } from "../contexts/authContext";
 // TODO : Define base url in env settings
 // const baseUrl = process.env.baseUrl
 
+// TODO : Refactor to return method for calling fetch.
+
 const useFetch = (url, method, body) => {
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(null);
