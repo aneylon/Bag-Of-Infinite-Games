@@ -38,6 +38,7 @@ const Signup = () => {
         />
         <input type="submit" value="sign up" disabled={isLoading} />
       </form>
+      {error && <div>Error : {error}</div>}
       have an account? : <NavLink to="/signin">sign in</NavLink>
     </div>
   );

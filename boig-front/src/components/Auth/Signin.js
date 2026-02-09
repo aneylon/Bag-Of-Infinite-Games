@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router";
 import Pulse from "../Loading/Pulse";
 import { useLogin } from "../../hooks/useLogin";
@@ -7,6 +7,10 @@ const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { login, isLoading, error } = useLogin();
+
+  useEffect(() => {
+    console.log(error);
+  }, [error]);
 
   const signIn = async (e) => {
     e.preventDefault();
@@ -39,6 +43,7 @@ const Signin = () => {
         />
         <input type="submit" value="sign in" disabled={isLoading} />
       </form>
+      {error && <div>Error : {error}</div>}
       no account? : <NavLink to="/signup">sign up</NavLink>
     </div>
   );
