@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const CreateNews = () => {
   const navigate = useNavigate();
+  const { user } = useAuthContext();
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
-  const author = "admin"; // TODO :get user name from logged in user
 
   const addNews = (e) => {
     e.preventDefault();
@@ -18,13 +19,14 @@ const CreateNews = () => {
     let newNewsItem = {
       title,
       body,
-      author,
+      userId: user ? user._userId : "",
       date: formattedDate,
     };
     setIsPending(true);
     setTimeout(() => {
-      fetch("http://localhost:8000/news", {
+      fetch("http://localhost:4200/news", {
         method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newNewsItem),
       })
         .then((res) => {
