@@ -33,9 +33,11 @@ mongo_uri=mongodb://localhost:27017
   - [ ] - Show errors
 - [x] - Add Auth Context
 - [x] - Add Version Context
+- [ ] - Wire to modal to notify user about updates
 - [ ] - Add Api utils file
   - [ ] - Add Tests for api uitls
 - [x] - Add Cypress for Front end / End to end testing
+- [ ] - Refactor useFetch hook to work correctly
 
 ### TODO :
 
