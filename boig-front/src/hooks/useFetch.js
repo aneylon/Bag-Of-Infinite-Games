@@ -1,11 +1,11 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../contexts/authContext";
 // TODO : Define base url in env settings
 // const baseUrl = process.env.baseUrl
 
 // TODO : Refactor to return method for calling fetch.
 
-const useFetch = (url, method, body) => {
+const useFetch = () => {
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
@@ -16,8 +16,7 @@ const useFetch = (url, method, body) => {
   if (user) {
     headers = { ...headers, Authorization: `Bearer ${user.authToken}` };
   }
-
-  useEffect(() => {
+  const request = (url, method, body) => {
     setIsPending(true);
     fetch(url, {
       method,
@@ -41,9 +40,9 @@ const useFetch = (url, method, body) => {
         setIsPending(false);
         console.error(error);
       });
-  }, []);
+  };
 
-  return { data, error, isPending };
+  return { request, data, error, isPending };
 };
 
 export default useFetch;
