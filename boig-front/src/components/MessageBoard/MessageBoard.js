@@ -1,3 +1,4 @@
+import DirectMessage from "./DirectMessage";
 import MessageBoardListItem from "./MessageBoardListItem";
 import MessageBoardMessage from "./MessageBoardMessage";
 import NewMessageBoardMessage from "./NewMessageBoardMessage";
@@ -14,6 +15,7 @@ const MessageBoard = () => {
   return (
     <div>
       <h1>Message Board</h1>
+      <DirectMessage recipient={1234} />
       <NewMessageBoardMessage parentId={234} />
       <MessageBoardMessage message={message} />
       <MessageBoardListItem message={message} />
