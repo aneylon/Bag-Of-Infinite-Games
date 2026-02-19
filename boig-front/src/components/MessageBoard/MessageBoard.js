@@ -1,4 +1,4 @@
-import DirectMessage from "./DirectMessage";
+import DirectMessage from "../DirectMessage/DirectMessage";
 import MessageBoardListItem from "./MessageBoardListItem";
 import MessageBoardMessage from "./MessageBoardMessage";
 import NewMessageBoardMessage from "./NewMessageBoardMessage";

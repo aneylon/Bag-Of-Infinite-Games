@@ -47,6 +47,9 @@ mongo_uri=mongodb://localhost:27017
 - [ ] - Tasks
 - [ ] - Message board
 - [ ] - Direct message
+  - [ ] - List of messages between recipients
+    - [ ] - List item for each message
+  - [ ] - Send direct message component
 - [ ] - Random functions
 - [ ] - user management
 - [ ] - Games
