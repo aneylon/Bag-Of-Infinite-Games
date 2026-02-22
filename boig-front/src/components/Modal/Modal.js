@@ -23,6 +23,7 @@ const Modal = ({ content, show = true }) => {
         top: 0,
         width: "100%",
         height: "100%",
+        // TODO : disallow clicking outside the modal
       }}
     >
       <div

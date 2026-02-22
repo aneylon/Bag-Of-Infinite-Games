@@ -4,7 +4,7 @@ export const VersionContext = createContext();
 
 const VersionContextProvider = (props) => {
   const [version, setVersion] = useState(null);
-
+  // TODO : use useFetch here.
   const getVersion = () => {
     fetch("./version.json")
       .then((res) => {
