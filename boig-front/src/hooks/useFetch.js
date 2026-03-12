@@ -6,6 +6,7 @@ import { AuthContext } from "../contexts/authContext";
 // TODO : Refactor to return method for calling fetch.
 
 const useFetch = () => {
+  const [versionCheckTime, setVersionCheckTime] = useState();
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
